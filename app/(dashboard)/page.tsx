@@ -6,12 +6,18 @@ import { HiCursorClick } from 'react-icons/hi'
 import { TbArrowBounce } from 'react-icons/tb'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
+import { Separator } from '@/components/ui/separator'
+import CreateFormButton from '@/components/CreateFormButton'
 export default async function Home() {
   return (
     <div className='container pt-4'>
       <Suspense fallback={<StatsCards loading={true} />}>
         <CardStatsWrapper />
       </Suspense>
+      <Separator className='my-6' />
+      <h2 className='text-4xl col-span-2 font-bold'>Your Forms</h2>
+      <Separator className='my-6' />
+      <CreateFormButton />
     </div>
   )
 }
